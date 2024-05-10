@@ -11,7 +11,7 @@ def main():
     # Neural network parameters
     input_size = X_train.shape[1]
     hidden_size = 5  # This can be adjusted based on the complexity of the problem
-    output_size = 2  # Adjust based on number of classes/intents
+    output_size = 4  # Adjust based on number of classes/intents
 
     # Initialize and train the neural network
     nn = NeuralNetwork(input_size, hidden_size, output_size)
@@ -24,7 +24,7 @@ def main():
             print("Exiting...")
             break
 
-        # Encoding the user input using the same vectorizer used during training
+        # Encoding the user input using the same vectorized used during training
         test_encoded = vectorizer.transform([user_input]).toarray()
         prediction = nn.feedforward(test_encoded)
 
